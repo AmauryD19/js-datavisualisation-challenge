@@ -1,6 +1,6 @@
 /* 
 // WRITE YOUR JAVASCRIPT BELOW THIS COMMENT 
-Your name :     
+Your name : Dotrice Amaury 
 Date :  
 Contact information : 
 What does this script do ? 
@@ -8,3 +8,4 @@ What does this script do ?
 */
 
 // Your scripting goes here...
+
