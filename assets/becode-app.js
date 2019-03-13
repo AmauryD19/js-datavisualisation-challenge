@@ -8,4 +8,4 @@ What does this script do ?
 */
 
 // Your scripting goes here...
-
+document.querySelectorAll('#table1 tbody');
