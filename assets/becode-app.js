@@ -10,17 +10,18 @@ What does this script do ?
 // Your scripting goes here...
 /* Premier graph */
 
+/* Création de la div tabdiv */
 var div = document.createElement("div");
 div.id = "tabdiv";
 var container = document.getElementById("mw-content-text");
 
 container.insertBefore(div, table1);
 
+/* Les variables */
 var data = [];
 var table = document.getElementById("table1");
 var years = table.getElementsByTagName("tr")[1].getElementsByTagName("th");
 var yearsArray = [];
-
 
 
 for (let i = 2; i < years.length; i++) {
@@ -29,8 +30,6 @@ for (let i = 2; i < years.length; i++) {
 }
 
 var rows = table.getElementsByTagName("tr");
-
-
 
 for (let i = 2; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
@@ -69,8 +68,6 @@ var table = document.getElementById("table2");
 var years = table.getElementsByTagName("tr")[0].getElementsByTagName("th");
 var yearsArray = [];
 
-console.log(yearsArray)
-
 for (let i = 2; i < years.length; i++) {
     let content = years[i].innerHTML;
     yearsArray.push(content);
@@ -90,8 +87,6 @@ for (let i = 2; i < rows.length; i++) {
 
     }
 }
-
-console.log(data)
 
 var myChart = new dimple.chart(dimple.newSvg("#tabdiv2", "100%", 550), data);
 myChart.setBounds(35, 180, "90%", 305);
