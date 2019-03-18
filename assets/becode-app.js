@@ -24,14 +24,14 @@ var years = table.getElementsByTagName("tr")[1].getElementsByTagName("th");
 var yearsArray = [];
 
 
-for (let i = 2; i < years.length; i++) {
+for (let i = 1; i < years.length; i++) {
     let content = years[i].innerHTML;
     yearsArray.push(content);
 }
 
 var rows = table.getElementsByTagName("tr");
 
-for (let i = 2; i < rows.length; i++) {
+for (let i = 1; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
 
     for (let j = 0; j < cells.length; j++) {
@@ -68,14 +68,14 @@ var table = document.getElementById("table2");
 var years = table.getElementsByTagName("tr")[0].getElementsByTagName("th");
 var yearsArray = [];
 
-for (let i = 2; i < years.length; i++) {
+for (let i = 1; i < years.length; i++) {
     let content = years[i].innerHTML;
     yearsArray.push(content);
 }
 
 var rows = table.getElementsByTagName("tr");
 
-for (let i = 2; i < rows.length; i++) {
+for (let i = 1; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
 
     for (let j = 0; j < cells.length; j++) {
