@@ -24,15 +24,15 @@ var yearsArray = []; //Array contenant les années
 var rows = table.getElementsByTagName("tr");
 
 /* Données du premier graph */
-for (let i = 1; i < years.length; i++) { //Ici je push les années dans l'array
-    let allYears = years[i].innerHTML;
+for (i = 1; i < years.length; i++) { //Ici je push les années dans l'array
+    allYears = years[i].innerHTML;
     yearsArray.push(allYears);
 }
 
-for (let i = 1; i < rows.length; i++) { //Ici push les données dans 
-    let allData = rows[i].getElementsByTagName("td");
+for (i = 1; i < rows.length; i++) { //Ici push les données dans 
+    allData = rows[i].getElementsByTagName("td");
 
-    for (let j = 0; j < allData.length; j++) { //Ici si j est 0 la variable pays sera le nom du pays
+    for (j = 0; j < allData.length; j++) { //Ici si j est 0 la variable pays sera le nom du pays
         if (j === 0) {
             var pays = allData[j].innerHTML;
         } else if (!isNaN(parseInt(allData[j].innerHTML))) { //Ici si j n'est pas 0 on push un objet dans l'array Data contenant toutes les informations
@@ -70,15 +70,15 @@ var yearsArray = [];
 var rows = table.getElementsByTagName("tr");
 
 /* Donnée du second graph*/
-for (let i = 1; i < years.length; i++) {
-    let allYears = years[i].innerHTML;
+for (i = 1; i < years.length; i++) {
+    allYears = years[i].innerHTML;
     yearsArray.push(allYears);
 }
 
-for (let i = 1; i < rows.length; i++) {
-    let allData = rows[i].getElementsByTagName("td");
+for (i = 1; i < rows.length; i++) {
+    allData = rows[i].getElementsByTagName("td");
 
-    for (let j = 0; j < allData.length; j++) {
+    for (j = 0; j < allData.length; j++) {
         if (j === 0) {
             var pays = allData[j].innerHTML;
         } else if (!isNaN(parseInt(allData[j].innerHTML))) {
@@ -88,17 +88,16 @@ for (let i = 1; i < rows.length; i++) {
 }
 
 /* Création du second graph */
-var myChart = new dimple.chart(dimple.newSvg("#tabdiv2", "100%", 550), data);
+var svg = dimple.newSvg("#tabdiv2", "100%", 550);
+var myChart = new dimple.chart(svg, data);
 myChart.setBounds(35, 180, "90%", 305);
 var x = myChart.addCategoryAxis("x", ["years", "pays"]);
-x.addOrderRule("years", false);
 var y = myChart.addMeasureAxis("y", "data");
 y.ticks = 15;
 myChart.addSeries("pays", dimple.plot.bubble);
 myChart.addLegend(10, 10, "100%", 200);
 myChart.draw();
-
-/* Je n'ai pas réussi à implémenter le second graphique tout en gardant des "let".
+/* Je n'ai pas réussi à implémenter le second graphique tout en gardant des ".
 De base je n'utilisais "var" que pour la pays, dans la boucle j === 0, car cela ne fonctionnait pas autrement et je n'ai pas trouvé de solution autre que l'utilisation de "var".
-Quand j'utilisais "let", tout fonctionne parfaitement pour le premier graphique, mais quand j'ajoute le second rien ne va plus. J'ai essayé de changer le nom des variables
+Quand j'utilisais ", tout fonctionne parfaitement pour le premier graphique, mais quand j'ajoute le second rien ne va plus. J'ai essayé de changer le nom des variables
 mais cela n'a rien changé, probablement une faute d'inattention venant de ma part, mais je n'arrive pas à mettre le doigt dessus je suis donc resté sur des "var". */
